@@ -37,11 +37,11 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Install scoop
-      run: scoop install gh
-    
     - name: Install golang-migrate
-      run: scoop install migrate
+      run:  |
+            curl -L https://github.com/golang-migrate/migrate/releases/download/v4.19.0/migrate.darwin-amd64.tar.gz | tar xvz
+            sudo mv migrate.linux-amd64 usr/bin/
+            which migrate
         
     - name: Run migrations 
       run: make migrateup
