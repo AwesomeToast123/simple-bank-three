@@ -39,6 +39,9 @@ jobs:
         
     - name: Run migrations 
       run: make migrateup
-      
+
+    - name: Install golang-migrate
+      run: scoop install migrate
+
     - name: Test
       run: make test
