@@ -8,7 +8,7 @@ dropdb:
 	docker exec -it postgres_redux dropdb -U user simple_bank_three
 
 migrateup:
-	migrate -path db/migration -database "postgresql://user:mysecret@localhost:5432/simple_bank_three?sslmode=disable" force 1 -verbose up 
+	migrate -path db/migration -database "postgresql://user:mysecret@localhost:5432/simple_bank_three?sslmode=disable" -verbose up 
 
 migratedown:
 	migrate -path db/migration -database "postgresql://user:mysecret@localhost:5432/simple_bank_three?sslmode=disable" -verbose down 
